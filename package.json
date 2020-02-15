@@ -5,6 +5,8 @@
   "repository": "git@github.com:TannerMoore/mETH.git",
   "license": "MIT",
   "devDependencies": {
-    "@makerdao/dai": "^0.25.0"
+    "@makerdao/dai": "^0.25.0",
+    "@makerdao/dai-plugin-mcd": "^1.1.0",
+    "@openzeppelin/contracts": "^2.5.0"
   }
 }

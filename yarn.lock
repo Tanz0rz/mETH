@@ -17,6 +17,16 @@
     babel-runtime "^6.26.0"
     bignumber.js "^8.1.1"
 
+"@makerdao/dai-plugin-mcd@^1.1.0":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@makerdao/dai-plugin-mcd/-/dai-plugin-mcd-1.1.0.tgz#ca12b1837e58ed5835ad8ffd0c409d8f05989f36"
+  integrity sha512-E86PS9LtuFpLEgNEmUI+bJG5d15B85mrwR/FMd63SUeYxBisE1rRmd2cjPDbuq+gDOOG6mPGK/juerCKYI6gSw==
+  dependencies:
+    "@makerdao/currency" "^0.9.5"
+    "@makerdao/services-core" "^0.9.9"
+    bignumber.js "^8.1.1"
+    rxjs "^6.5.4"
+
 "@makerdao/dai@^0.25.0":
   version "0.25.0"
   resolved "https://registry.yarnpkg.com/@makerdao/dai/-/dai-0.25.0.tgz#cf362d0e3741c9b77b6c89dc17d1a343dbb0e97e"
@@ -65,6 +75,11 @@
     babel-runtime "^6.26.0"
     lodash "^4.17.15"
     toposort "^2.0.2"
+
+"@openzeppelin/contracts@^2.5.0":
+  version "2.5.0"
+  resolved "https://registry.yarnpkg.com/@openzeppelin/contracts/-/contracts-2.5.0.tgz#e327a98ba1d26b7756ff62885a0aa0967a375449"
+  integrity sha512-t3jm8FrhL9tkkJTofkznTqo/XXdHi21w5yXwalEnaMOp22ZwZ0f/mmKdlgMMLPFa6bSVHbY88mKESwJT/7m5Lg==
 
 "@sindresorhus/is@^0.14.0":
   version "0.14.0"
@@ -195,7 +210,7 @@ async-eventemitter@^0.2.2:
   dependencies:
     async "^2.4.0"
 
-"async-eventemitter@github:ahultgren/async-eventemitter#fa06e39e56786ba541c180061dbf2c0a5bbf951c":
+async-eventemitter@ahultgren/async-eventemitter#fa06e39e56786ba541c180061dbf2c0a5bbf951c:
   version "0.2.3"
   resolved "https://codeload.github.com/ahultgren/async-eventemitter/tar.gz/fa06e39e56786ba541c180061dbf2c0a5bbf951c"
   dependencies:
