@@ -1,4 +1,4 @@
-pragma solidity ^0.6.1;
+pragma solidity ^0.5.1;
 
 interface ERC20 {
     function totalSupply() external view returns (uint supply);

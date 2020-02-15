@@ -1,4 +1,4 @@
-pragma solidity ^0.6.1;
+pragma solidity ^0.5.1;
 
 /**
 from out/addresses.json
@@ -28,7 +28,7 @@ from out/addresses.json
 */
 
 contract ConstantAddresses {
-    address public constant WETH_ADDRESS = 0x7ba25f791fa76c3ef40ac98ed42634a8bc24c238;
+    address public constant WETH_ADDRESS = 0xd0A1E359811322d97991E03f863a0C30C2cF029C;
     address public constant MAKER_DAI_ADDRESS = 0xC4375B7De8af5a38a93548eb8453a498222C4fF2;
     address public constant MKR_ADDRESS = 0xAaF64BFCC32d0F15873a02163e7E500671a4ffcD;
     address public constant TUB_ADDRESS = 0xa71937147b55Deb8a530C7229C442Fd3F31b7db2;

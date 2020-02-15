@@ -1,21 +1,21 @@
-pragma solidity ^0.6.1;
+pragma solidity ^0.5.1;
 
 contract CDP {
   address public owner;
   // TODO This may not be a address
   address cupAddress;
 
-  constructor() public {
-    owner = msg.sender;
-    // create cdp
-  }
+  // constructor() public {
+  //   owner = msg.sender;
+  //   // create cdp
+  // }
 
   modifier restricted() {
     if (msg.sender == owner) _;
   }
 
-  function deposit() public restricted {
-
+  function deposit() public pure returns (uint value) {
+    return 1337;
     // wrap eth (gem)
     // add to cup
     // get dai
