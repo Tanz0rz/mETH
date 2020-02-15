@@ -4,18 +4,21 @@ contract CDP {
   address public owner;
   // TODO This may not be a address
   address cupAddress;
+  uint balance;
 
-  // constructor() public {
-  //   owner = msg.sender;
-  //   // create cdp
-  // }
+  constructor() public {
+    owner = msg.sender;
+    // create cdp
+
+    balance = 0;
+  }
 
   modifier restricted() {
     if (msg.sender == owner) _;
   }
 
-  function deposit() public pure returns (uint value) {
-    return 1337;
+  function deposit(uint amount) public {
+    balance += amount;
     // wrap eth (gem)
     // add to cup
     // get dai
@@ -23,6 +26,10 @@ contract CDP {
     // wrap
     // add to cup
     // repeat until exposure is 2x
+  }
+
+  function getBalance() public view returns (uint) {
+    return balance;
   }
 
 /**
