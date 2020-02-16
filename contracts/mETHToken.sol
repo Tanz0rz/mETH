@@ -21,7 +21,7 @@ contract mETHCrowdsale is Crowdsale, MintedCrowdsale {
         address payable wallet,
         IERC20 token
     )
-        MintableCrowdsale()
+        MintedCrowdsale()
         Crowdsale(rate, wallet, token)
         public
     {
