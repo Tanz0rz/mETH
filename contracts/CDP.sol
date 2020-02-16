@@ -85,14 +85,13 @@ pragma solidity ^0.5.1;
 
  */
 
-// import "@openzeppelin/contracts/token/ERC721/ERC721Full.sol";
 import "./interfaces/DSProxyInterface.sol";
 import "./interfaces/ProxyRegistryInterface.sol";
 
 contract CDP {
   address constant proxyRegistryAddress = 0x298E3eb3C76938DA922EF01b99c87dF156985701;
   address constant cdpManagerAddress = 0xDa4EbE73ff9e11FC6f97cEf200199Ddb385d7982;
-  address constant proxyActions = 0x49058F4F6c8C3E1b75aeD7AA45e06c439b9429f0;
+  address constant proxyActionAddress = 0x49058F4F6c8C3E1b75aeD7AA45e06c439b9429f0;
 
   ProxyRegistryInterface proxyRegistry = ProxyRegistryInterface(proxyRegistryAddress);
 
@@ -108,15 +107,16 @@ contract CDP {
   }
 
   function open() public {
-    DSProxyInterface proxy = proxyRegistry.proxies(msg.sender);
+    DSProxyInterface proxy = proxyRegistry.proxies(owner);
+    // TODO If clause get this if not there
     // address payable proxy = proxyRegistry.build(msg.sender);
 
     cdpId = proxy.execute(
-      proxyActions,
+      proxyActionAddress,
       abi.encodeWithSignature("open(address,bytes32,address)",
-      cdpManagerAddress, bytes32("ETH"), owner));
+      cdpManagerAddress, bytes32("ETH"), msg.sender));
 
-    // TODO Swap to openLockETHAndDraw(address manager, address jug, address ethJoin, address daiJoin, bytes32 ilk, uint wadD)
+    // TODO Swap to lockETHAndDraw(address manager, address jug, address ethJoin, address daiJoin, bytes32 ilk, uint wadD)
   }
 
 /**
