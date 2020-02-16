@@ -91,8 +91,8 @@ import "./interfaces/ProxyRegistryInterface.sol";
 
 contract CDP {
   address constant proxyRegistryAddress = 0x298E3eb3C76938DA922EF01b99c87dF156985701;
-  // address constant cdpManagerAddress = 0xda4ebe73ff9e11fc6f97cef200199ddb385d7982;
-  // address constant proxyActions = 0x49058f4f6c8c3e1b75aed7aa45e06c439b9429f0;
+  address constant cdpManagerAddress = 0xDa4EbE73ff9e11FC6f97cEf200199Ddb385d7982;
+  address constant proxyActions = 0x49058F4F6c8C3E1b75aeD7AA45e06c439b9429f0;
 
   ProxyRegistryInterface proxyRegistry = ProxyRegistryInterface(proxyRegistryAddress);
 
@@ -108,12 +108,13 @@ contract CDP {
   }
 
   function open() public {
-    address payable proxy = proxyRegistry.build(msg.sender);
+    DSProxyInterface proxy = proxyRegistry.proxies(msg.sender);
+    // address payable proxy = proxyRegistry.build(msg.sender);
 
-    // cdpId = proxy.execute(
-    //   proxyActionsDsr,
-    //   abi.encodeWithSignature("open(address,bytes32,address)",
-    //   cdpManagerAddress, bytes32("ETH"), owner));
+    cdpId = proxy.execute(
+      proxyActions,
+      abi.encodeWithSignature("open(address,bytes32,address)",
+      cdpManagerAddress, bytes32("ETH"), owner));
 
     // TODO Swap to openLockETHAndDraw(address manager, address jug, address ethJoin, address daiJoin, bytes32 ilk, uint wadD)
   }
